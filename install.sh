@@ -21,7 +21,7 @@ EOF
 
 isFile(){
         L=\`cat $1|wc -l\`
-        n=$(($L - 150))
+        n=$(($L - 300))
         if [ $n -gt 0 ];then
                 sed -i "1,${n}d" $1
         fi
