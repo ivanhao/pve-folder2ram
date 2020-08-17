@@ -43,7 +43,7 @@ isDir '/var/log'
 EOF
     chmod +x /usr/bin/truncLog
     echo "" >> /etc/crontab
-    echo "@reboot */10 *	*	*	*	root	/usr/bin/truncLog" >> /etc/crontab
+    echo "@reboot */10  *	*	*	*	root	/usr/bin/truncLog" >> /etc/crontab
     systemctl restart cron
     echo "done."
 else
