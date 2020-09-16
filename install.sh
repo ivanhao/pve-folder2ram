@@ -38,7 +38,7 @@ isDir(){
                 fi
         done
 }
-
+rm /var/log/*.gz
 isDir '/var/log'
 EOF
     chmod +x /usr/bin/truncLog
