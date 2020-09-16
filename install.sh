@@ -41,6 +41,10 @@ isDir(){
         done
 }
 rm /var/log/*.gz
+for i in {1..6}
+do
+   rm /var/log/*.\$i
+done
 isDir '/var/log'
 EOF
 
