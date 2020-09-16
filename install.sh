@@ -22,7 +22,7 @@ EOF
 #!/bin/bash
 
 isFile(){
-        L=\`cat $1|wc -l\`
+        L=\`cat \$1|wc -l\`
         n=\$((\$L - 300))
         if [ \$n -gt 0 ];then
                 sed -i "1,\${n}d" \$1
