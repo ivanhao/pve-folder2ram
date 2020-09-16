@@ -13,7 +13,9 @@ tmpfs           /var/tmp
 tmpfs           /var/cache
 tmpfs           /tmp
 EOF
+
    folder2ram -enablesystemd
+   
    folder2ram -mountall
    
    cat << EOF > /usr/bin/truncLog
@@ -21,26 +23,27 @@ EOF
 
 isFile(){
         L=\`cat $1|wc -l\`
-        n=$(($L - 300))
-        if [ $n -gt 0 ];then
-                sed -i "1,${n}d" $1
+        n=\$((\$L - 300))
+        if [ \$n -gt 0 ];then
+                sed -i "1,\${n}d" \$1
         fi
 }
 
 isDir(){
-        echo $1
-        for i in \`ls $1\`
+        echo \$1
+        for i in \`ls \$1\`
         do
-                if [ -f $1/$i ];then
-                        isFile $1/$i
+                if [ -f \$1/\$i ];then
+                        isFile \$1/\$i
                 else
-                        isDir $1/$i
+                        isDir \$1/\$i
                 fi
         done
 }
 rm /var/log/*.gz
 isDir '/var/log'
 EOF
+
     chmod +x /usr/bin/truncLog
     echo "" >> /etc/crontab
     echo "@reboot */10  *	*	*	*	root	/usr/bin/truncLog" >> /etc/crontab
