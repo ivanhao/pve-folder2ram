@@ -13,7 +13,7 @@ echo -e "tmpfs\t\t/tmp" >> /etc/folder2ram/folder2ram.conf
 
 
    folder2ram -enablesystemd
-   
+   folder2ram -umountall
    folder2ram -mountall
    
    cat << EOF > /usr/bin/truncLog
