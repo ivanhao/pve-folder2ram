@@ -54,10 +54,10 @@ EOF
     echo "done."
 }
 
-echo "install pve-folder2ram? (y\n)"
-read x
-if [ $x == 'n' ];then
-    exit
-else
+#echo "install pve-folder2ram? (y\n)"
+#read x
+#if [ $x == 'n' ];then
+#    exit
+#else
     main
-fi
+#fi
