@@ -1,6 +1,7 @@
 #!/bin/bash
 
 main(){
+   echo "installing ..."
    apt -y install  wget
    wget -O /sbin/folder2ram https://raw.githubusercontent.com/bobafetthotmail/folder2ram/master/debian_package/sbin/folder2ram
    chmod +x /sbin/folder2ram
