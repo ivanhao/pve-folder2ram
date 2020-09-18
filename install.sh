@@ -8,11 +8,11 @@ if [ $x == 'y' ];then
    chmod +x /sbin/folder2ram
    mkdir /etc/folder2ram
    cat << EOF > /etc/folder2ram/folder2ram.conf
-tmpfs           /var/log
-tmpfs           /var/tmp
-tmpfs           /var/cache
-tmpfs           /tmp
-EOF
+echo -e "tmpfs\t\t/var/log" > /etc/folder2ram/folder2ram.conf
+echo -e "tmpfs\t\t/var/tmp" >> /etc/folder2ram/folder2ram.conf
+echo -e "tmpfs\t\t/var/cache" >> /etc/folder2ram/folder2ram.conf
+echo -e "tmpfs\t\t/tmp" >> /etc/folder2ram/folder2ram.conf
+
 
    folder2ram -enablesystemd
    
