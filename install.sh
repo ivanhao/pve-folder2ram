@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo "install pve-folder2ram? (y\n)"
-read x
-if [ $x == 'y' ];then
+main(){
    apt -y install  wget
    wget -O /sbin/folder2ram https://raw.githubusercontent.com/bobafetthotmail/folder2ram/master/debian_package/sbin/folder2ram
    chmod +x /sbin/folder2ram
@@ -53,6 +51,12 @@ EOF
     echo "@reboot */10  *	*	*	*	root	/usr/bin/truncLog" >> /etc/crontab
     systemctl restart cron
     echo "done."
+}
+
+echo "install pve-folder2ram? (y\n)"
+read x
+if [ $x == 'y' ];then
+    main
 else
     exit
 fi
