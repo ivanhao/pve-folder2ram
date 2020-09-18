@@ -56,8 +56,8 @@ EOF
 
 echo "install pve-folder2ram? (y\n)"
 read x
-if [ $x == 'y' ];then
-    main
-else
+if [ $x == 'n' ];then
     exit
+else
+    main
 fi
