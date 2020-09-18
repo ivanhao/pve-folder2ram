@@ -40,6 +40,7 @@ isDir(){
         done
 }
 rm /var/log/*.gz
+rm /var/cache/apt/archives/*.deb
 for i in {1..6}
 do
    rm /var/log/*.\$i
